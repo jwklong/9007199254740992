@@ -63,7 +63,7 @@ HTMLActuator.prototype.addTile = function (tile) {
 
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  inner.textContent = tile.value >= 1e5 ? (tile.value ** 2).toPrecision(5) : (tile.value ** 2).toString();
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
